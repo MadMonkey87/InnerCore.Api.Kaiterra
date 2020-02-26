@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>InnerCore.Api.HueSync</id>
+    <version>1.1.1</version>
+    <title>InnerCore.Api.HueSync</title>
+    <authors>Philippe Wechsler</authors>
+    <owners>Philippe Wechsler</owners>
+    <licenseUrl>https://github.com/MadMonkey87/InnerCore.Api.Kaiterra/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MadMonkey87/InnerCore.Api.Kaiterra</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple library to read sensor data from Kaiterra devices</description>
+    <releaseNotes>initial release</releaseNotes>
+    <copyright>Copyright 2020 Philippe Wechsler</copyright>
+    <tags>kaiterra laseregg senseedge sensor iot air</tags>
+	<repository type="GitHub" url="https://github.com/MadMonkey87/InnerCore.Api.Kaiterra" />
+	<dependencies>
+		<group targetFramework="netstandard2.0">
+			<dependency id="Newtonsoft.Json" version="12.0.3" />
+		</group>
+	</dependencies>
+  </metadata>
+  <files>
+	<file src="bin\Release\**\InnerCore.Api.Kaiterra.dll" target="lib" />
+  </files>
+</package>

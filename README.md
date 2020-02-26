@@ -38,7 +38,7 @@ tbd
 
 ## License
 
-InnerCore.Api.Kaiterra is licensed under [MIT](http://www.opensource.org/licenses/mit-license.php "Read more about the MIT license form"). Refer to [license.txt](https://github.com/MadMonkey87/InnerCore.Api.Kaiterra/blob/master/LICENSE.txt) for more information.
+InnerCore.Api.Kaiterra is licensed under [MIT](http://www.opensource.org/licenses/mit-license.php "Read more about the MIT license form"). Refer to [license](https://github.com/MadMonkey87/InnerCore.Api.Kaiterra/blob/master/LICENSE) for more information.
 
 ## Contributions
 Contributions are welcome. Fork this repository and send a pull request if you have something useful to add.
