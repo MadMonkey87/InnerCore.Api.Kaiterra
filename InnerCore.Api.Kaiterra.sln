@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnerCore.Api.Kaiterra", "InnerCore.Api.Kaiterra\InnerCore.Api.Kaiterra.csproj", "{A2DFF580-EFB6-43AF-B08A-98C652676DCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45FB1E24-4B50-44F5-8880-5A9905F42487}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnerCore.Api.Kaiterra.BasicSample", "InnerCore.Api.Kaiterra.BasicSample\InnerCore.Api.Kaiterra.BasicSample.csproj", "{F1130AF6-4E4E-4DE6-9C43-4BF5FD12C07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnerCore.Api.Kaiterra.ExtendedSample", "InnerCore.Api.Kaiterra.ExtendedSample\InnerCore.Api.Kaiterra.ExtendedSample.csproj", "{078C1615-5AD9-466C-98DB-EB0FBA228C02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2DFF580-EFB6-43AF-B08A-98C652676DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2DFF580-EFB6-43AF-B08A-98C652676DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2DFF580-EFB6-43AF-B08A-98C652676DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2DFF580-EFB6-43AF-B08A-98C652676DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1130AF6-4E4E-4DE6-9C43-4BF5FD12C07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1130AF6-4E4E-4DE6-9C43-4BF5FD12C07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1130AF6-4E4E-4DE6-9C43-4BF5FD12C07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1130AF6-4E4E-4DE6-9C43-4BF5FD12C07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{078C1615-5AD9-466C-98DB-EB0FBA228C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078C1615-5AD9-466C-98DB-EB0FBA228C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078C1615-5AD9-466C-98DB-EB0FBA228C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{078C1615-5AD9-466C-98DB-EB0FBA228C02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB0B33D9-4F75-450E-B8BC-BDD40687FB59}
+	EndGlobalSection
+EndGlobal
