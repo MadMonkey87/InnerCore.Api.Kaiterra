@@ -22,13 +22,13 @@ This client is based around the dashboard (https://dashboard.kaiterra.cn/) and i
 ## Usage of the KaiterraBasicClient
 
 First you need an api key - check https://www.kaiterra.com/dev/ if you don't have one. Using this key you then can instanciate the client:
-	var client = new KaiterraBasicClient("put your api key here");
+    var client = new KaiterraBasicClient("put your api key here");
 
 If you have a Laser Egg you can read it's latest values using this line of code:
-	var sensorReadings = await client.GetLaserEggDetails("put the serial of the device here");
+    var sensorReadings = await client.GetLaserEggDetails("put the serial of the device here");
 
 If you have a SensorEdge device you can read it's latest values using this line of code:
-	var sensorReadings = await client.GetSenseEdgeDetails("put the serial of the device here");
+    var sensorReadings = await client.GetSenseEdgeDetails("put the serial of the device here");
 
 *Note: have a look at the provides sample application as it contains two demo devices*
 
