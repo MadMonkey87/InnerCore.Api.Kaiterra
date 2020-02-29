@@ -51,27 +51,27 @@ namespace InnerCore.Api.Kaiterra.ExtendedSample
 
             Console.WriteLine($"   time stamp: {data.TimeStamp}");
 
-            if (data.Pollutants.AirQualityIndex.Value.HasValue)
+            if (data.Pollutants.AirQualityIndex?.Value.HasValue == true)
             {
                 Console.WriteLine($"   Air Quality Index: {data.Pollutants.AirQualityIndex.Value}");
             }
 
-            if (data.Pollutants.CO2.Value.HasValue)
+            if (data.Pollutants.CO2?.Value.HasValue == true)
             {
                 Console.WriteLine($"   CO2: {data.Pollutants.CO2.Value} {history.Units.CO2}");
             }
 
-            if (data.Pollutants.Pm25.Value.HasValue)
+            if (data.Pollutants.Pm25?.Value.HasValue == true)
             {
                 Console.WriteLine($"   Pm2.5: {data.Pollutants.Pm25.Value} {history.Units.Pm25}");
             }
 
-            if (data.Pollutants.Pm10.Value.HasValue)
+            if (data.Pollutants.Pm10?.Value.HasValue == true)
             {
                 Console.WriteLine($"   Pm10: {data.Pollutants.Pm10.Value} {history.Units.Pm10}");
             }
 
-            if (data.Pollutants.TotalVolatileOrganicCompounds.Value.HasValue)
+            if (data.Pollutants.TotalVolatileOrganicCompounds?.Value.HasValue == true)
             {
                 Console.WriteLine($"   tVOC: {data.Pollutants.TotalVolatileOrganicCompounds.Value} {history.Units.TotalVolatileOrganicCompounds}");
             }
