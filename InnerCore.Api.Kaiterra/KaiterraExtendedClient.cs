@@ -151,12 +151,12 @@ namespace InnerCore.Api.Kaiterra
 
 			try
 			{
-				return await GetHistoricValuesInternal(deviceId, formattedInterval, formattedFrom, formattedTo);
+				return await GetHistoricValuesInternal(deviceId, formattedFrom, formattedTo, formattedInterval);
 			}
 			catch (InvalidKTokenException)
 			{
 				await Login(_credentials.Email, _credentials.Password);
-				return await GetHistoricValuesInternal(deviceId, formattedInterval, formattedFrom, formattedTo);
+				return await GetHistoricValuesInternal(deviceId, formattedFrom, formattedTo, formattedInterval);
 			}
 		}
 
