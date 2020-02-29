@@ -35,5 +35,8 @@ namespace InnerCore.Api.Kaiterra.Models.Extended
 
         [DataMember(Name = "lastHandshakeTime")]
         public DateTimeOffset? LastHandshake { get; set; }
+
+        [DataMember(Name = "location")]
+        public decimal[] Location { get; set; }
     }
 }
