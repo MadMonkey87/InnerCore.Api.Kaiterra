@@ -1,5 +1,5 @@
 InnerCore.Api.Kaiterra [![Build Status][azure build]][project]	[![NuGet][nuget badge]][nuget package]	  [![.NET Standard][dotnet-standard badge]][dotnet-standard doc]
-=====================
+======================
 
 Open source library to read sensor data from the Kaiterra devices (Laser Egg, Laser Egg+ Chemical, Laser Egg+ CO2 & SenseEdge). For more details about the devices itself see https://www.kaiterra.com.
 
@@ -37,7 +37,15 @@ If you have a SensorEdge device you can read it's latest values using this line 
 
 ## Usage of the KaiterraExtendedClient
 
-tbd
+First you need to perform a login using the credentials (https://dashboard.kaiterra.cn/).
+
+	var client = new KaiterraExtendedClient();
+	var accessToken = await client.Login("your email", "your password");
+
+*Note: you can reuse the accessToken later on if you want to instanciate a new client. Simply use client.Login("your email", "your password", "your accessToken").
+You still need to provide the credentials because the accessToken is valid only for a limited amout of time. If it expires, a new login gets performed automatically.*
+
+Now you can query the available devices and it's current values as well as historic values -> have a look at the provided sample for more details.
 
 ## License
 
