@@ -11,5 +11,8 @@ namespace InnerCore.Api.Kaiterra.Models.Extended
 
         [DataMember(Name = "pollutants")]
         public Pollutants Pollutants { get; set; }
+
+        [DataMember(Name = "info")]
+        public Info Info { get; set; }
     }
 }

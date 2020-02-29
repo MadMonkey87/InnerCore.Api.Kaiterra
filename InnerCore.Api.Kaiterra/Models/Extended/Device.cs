@@ -19,10 +19,10 @@ namespace InnerCore.Api.Kaiterra.Models.Extended
         public String Firmware { get; set; }
 
         [DataMember(Name = "charging")]
-        public String Charging { get; set; }
+        public bool? Charging { get; set; }
 
         [DataMember(Name = "level")]
-        public String BatteryLevel { get; set; }
+        public int? BatteryLevel { get; set; }
 
         [DataMember(Name = "mac_eth")]
         public String MacAddressEthernet { get; set; }
