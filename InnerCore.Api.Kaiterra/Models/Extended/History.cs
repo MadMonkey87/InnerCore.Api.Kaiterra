@@ -10,5 +10,8 @@ namespace InnerCore.Api.Kaiterra.Models.Extended
 
         [DataMember(Name = "units")]
         public Units Units { get; set; }
+
+        [DataMember(Name = "info")]
+        public Info Info { get; set; }
     }
 }
