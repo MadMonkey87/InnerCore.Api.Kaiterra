@@ -14,9 +14,7 @@ namespace InnerCore.Api.Kaiterra
 {
 	public class KaiterraExtendedClient
 	{
-		private string _accessToken;
 
-		private LoginRequest _credentials;
 
 		private HttpClient _httpClient;
 
@@ -35,6 +33,10 @@ namespace InnerCore.Api.Kaiterra
 			}
 		}
 
+		public string AccessToken { get; private set; }
+
+		public LoginRequest Credentials { get; private set; }
+
 		public async Task<string> Login(string email, string password)
 		{
 			if (email == null)
@@ -46,19 +48,19 @@ namespace InnerCore.Api.Kaiterra
 				throw new ArgumentNullException(nameof(password));
 			}
 
-			_credentials = new LoginRequest { Email = email, Password = password };
+			Credentials = new LoginRequest { Email = email, Password = password };
 			var client = await GetHttpClient().ConfigureAwait(false);
-			var response = await client.PostAsync(new Uri($"{Constants.ENDPOINT}/auth/login"), SerializeRequest(_credentials)).ConfigureAwait(false);
+			var response = await client.PostAsync(new Uri($"{Constants.ENDPOINT}/auth/login"), SerializeRequest(Credentials)).ConfigureAwait(false);
 
 			if (response.StatusCode == HttpStatusCode.BadRequest || response.StatusCode == HttpStatusCode.NotFound)
 			{
 				throw new InvalidCredentialsException();
 			}
 
-			_accessToken = (await HandleResponseAsync<LoginResponse>(response)).AccessToken;
+			AccessToken = (await HandleResponseAsync<LoginResponse>(response)).AccessToken;
 			ApplyAccesstoken();
 
-			return _accessToken;
+			return AccessToken;
 		}
 
 		public async Task Login(string email, string password, string accessToken)
@@ -76,9 +78,9 @@ namespace InnerCore.Api.Kaiterra
 				throw new ArgumentNullException(nameof(accessToken));
 			}
 
-			_credentials = new LoginRequest { Email = email, Password = password };
+			Credentials = new LoginRequest { Email = email, Password = password };
 
-			_accessToken = accessToken;
+			AccessToken = accessToken;
 			ApplyAccesstoken();
 		}
 
@@ -91,7 +93,7 @@ namespace InnerCore.Api.Kaiterra
 			}
 			catch (InvalidKTokenException)
 			{
-				await Login(_credentials.Email, _credentials.Password);
+				await Login(Credentials.Email, Credentials.Password);
 				return await GetDevicesInternal();
 			}
 		}
@@ -111,7 +113,7 @@ namespace InnerCore.Api.Kaiterra
 			}
 			catch (InvalidKTokenException)
 			{
-				await Login(_credentials.Email, _credentials.Password);
+				await Login(Credentials.Email, Credentials.Password);
 				return await GetDeviceInternal(deviceId);
 			}
 		}
@@ -131,7 +133,7 @@ namespace InnerCore.Api.Kaiterra
 			}
 			catch (InvalidKTokenException)
 			{
-				await Login(_credentials.Email, _credentials.Password);
+				await Login(Credentials.Email, Credentials.Password);
 				return await GetCurrentValuesInternal(deviceId);
 			}
 		}
@@ -155,7 +157,7 @@ namespace InnerCore.Api.Kaiterra
 			}
 			catch (InvalidKTokenException)
 			{
-				await Login(_credentials.Email, _credentials.Password);
+				await Login(Credentials.Email, Credentials.Password);
 				return await GetHistoricValuesInternal(deviceId, formattedFrom, formattedTo, formattedInterval);
 			}
 		}
@@ -211,9 +213,9 @@ namespace InnerCore.Api.Kaiterra
 
 		private void ApplyAccesstoken()
 		{
-			if (!string.IsNullOrEmpty(_accessToken) && _httpClient != null)
+			if (!string.IsNullOrEmpty(AccessToken) && _httpClient != null)
 			{
-				_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
+				_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
 			}
 		}
 
@@ -241,7 +243,7 @@ namespace InnerCore.Api.Kaiterra
 
 		private void CheckInitialized()
 		{
-			if (string.IsNullOrEmpty(_accessToken) || _credentials == null)
+			if (string.IsNullOrEmpty(AccessToken) || Credentials == null)
 				throw new InvalidOperationException("You must initialize the client first by performing a login first");
 		}
 	}
