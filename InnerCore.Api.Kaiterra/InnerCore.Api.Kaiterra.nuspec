@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>InnerCore.Api.Kaiterra</id>
-    <version>0.9.1</version>
+    <version>0.9.2</version>
     <title>InnerCore.Api.Kaiterra</title>
     <authors>Philippe Wechsler</authors>
     <owners>Philippe Wechsler</owners>
